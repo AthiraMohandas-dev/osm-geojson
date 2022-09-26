@@ -4,6 +4,7 @@ require("dotenv").config();
 
 const apiUri = process.env.API_URI;
 
+/* Fetch data by calling osm api and convert osm data to geoJson format. */
 exports.fetchAndConvertData = async (bbox) => {
     try {
     const osmData = await axios.get(`${apiUri}?bbox=${bbox}`);

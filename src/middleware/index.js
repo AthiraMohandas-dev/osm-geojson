@@ -1,6 +1,7 @@
 const { query, validationResult } = require("express-validator");
 
 module.exports = {
+  // validate the req to check for request query params.
   validateRequestQuery() {
     return [query("bbox").not().isEmpty(), this.applyValidationMiddleware()];
   },
@@ -21,5 +22,5 @@ module.exports = {
         return next(Error(JSON.stringify(error)));
       }
     };
-  },
+  }
 };
